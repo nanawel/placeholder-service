@@ -26,7 +26,7 @@ class ImageRequest
         $imageRequest->colorText = $request->get('color_text', PlaceholderGenerator::COLOR_WHITE);
         $imageRequest->colorBg = $request->get('color_bg', PlaceholderGenerator::COLOR_GREY);
         $imageRequest->textSize = abs((int) $request->get('text_size', PlaceholderGenerator::DEFAULT_TEXT_SIZE));
-        $imageRequest->format = $request->get('format', PlaceholderGenerator::IMAGE_TYPE_PNG);
+        $imageRequest->format = $request->get('format', PlaceholderGenerator::FORMAT_PNG);
 
         return $imageRequest;
     }

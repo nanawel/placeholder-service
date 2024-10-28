@@ -1,15 +1,12 @@
 # Placeholder service
 
-There is a self-hosted service for images placeholders generation.
-Service works similar way as [https://placeholder.com/](https://placeholder.com/), but self-hosted.
+There is a simple self-hosted service for images placeholders generation.
+
+[Frontend](https://placeholder-ui.antonshell.me/), [Backend](https://placeholder.antonshell.me/)
 
 ![SSH Deploy](https://github.com/antonshell/placeholder-service/workflows/SSH%20Deploy/badge.svg)
 ![Tests](https://github.com/antonshell/placeholder-service/workflows/Tests/badge.svg?branch=master)
 ![Code Coverage](https://raw.githubusercontent.com/antonshell/placeholder-service/master/.github/badges/coverage.svg)
-
-Full code coverage report: [http://files.antonshell.me/github-actions/placeholder-service/master/coverage/coverage/](http://files.antonshell.me/github-actions/placeholder-service/master/coverage/coverage/)
-
-Psalm html report: [http://files.antonshell.me/github-actions/placeholder-service/master/psalm/psalm-report.html](http://files.antonshell.me/github-actions/placeholder-service/master/psalm/psalm-report.html)
 
 # Install in docker
 
@@ -40,7 +37,16 @@ docker-compose exec php-fpm composer install
 
 # Demo
 
+There is a SaaS version available:
 [https://placeholder.antonshell.me/img?width=500](https://placeholder.antonshell.me/img?width=500)
+
+And also UI available:
+[https://placeholder-ui.antonshell.me/](https://placeholder-ui.antonshell.me/)
+
+![placeholder-ui](https://raw.githubusercontent.com/antonshell/placeholder-service/master/resources/ui_demo/placeholder-ui.png)
+
+There is a separate project:
+[https://github.com/antonshell/placeholder-service-ui](https://github.com/antonshell/placeholder-service-ui)
 
 # Usage
 
@@ -123,6 +129,8 @@ Docker environment:
 docker-compose exec php-fpm composer test
 ```
 
+Full code coverage report: [http://files.antonshell.me/github-actions/placeholder-service/master/coverage/coverage/](http://files.antonshell.me/github-actions/placeholder-service/master/coverage/coverage/)
+
 2 . Update code coverage badges
 
 Local environment:
@@ -155,6 +163,23 @@ docker-compose exec php-fpm composer psalm-report-html
 ```
 
 Open in browser: psalm-report.html
+
+Psalm html report: [http://files.antonshell.me/github-actions/placeholder-service/master/psalm/psalm-report.html](http://files.antonshell.me/github-actions/placeholder-service/master/psalm/psalm-report.html)
+
+3 . Static analysis with PHPStan
+
+```
+docker-compose exec php-fpm vendor/bin/phpstan analyse
+```
+
+# Composer require checker
+
+```
+wget https://github.com/maglnet/ComposerRequireChecker/releases/download/4.10.0/composer-require-checker.phar
+docker-compose exec php-fpm composer require-check
+```
+
+More details: [https://github.com/maglnet/ComposerRequireChecker](https://github.com/maglnet/ComposerRequireChecker)
 
 # Macos docker environment(Mutagen)
 

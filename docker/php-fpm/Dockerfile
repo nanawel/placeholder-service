@@ -28,4 +28,6 @@ RUN usermod -u 1000 www-data
 
 WORKDIR /var/www
 
+ENV APP_ENV=prod
+
 EXPOSE 9000

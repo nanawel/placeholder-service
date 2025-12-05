@@ -24,6 +24,8 @@ RUN mkdir -p -m 0770 temp \
 
 USER www-data
 
+ENV APP_ENV=prod
+
 EXPOSE 80
 
 CMD ["php", "-c", "docker/standalone/php.ini", "-S", "0.0.0.0:80", "public/index.php"]

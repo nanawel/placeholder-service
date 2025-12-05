@@ -9,7 +9,7 @@ class SvgGenerator implements GeneratorInterface
     public function generate(
         int $width,
         int $height,
-        ?string $text = null,
+        ?string $text,
         int $textSize,
         string $colorText,
         string $colorBg
